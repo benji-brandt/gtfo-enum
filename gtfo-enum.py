@@ -3,7 +3,7 @@
 # Run the following commands on target machine and copy results to a file
 # SUIDS: find / -perm -u=s -type f 2>/dev/null
 # GUIDS: find / -perm -g=s -type f 2>/dev/null
-# call > python3 gtfo-enum.py --file <filename>
+# call > python3 gtfo-enum.py --file <filename> [--all  if you want to include non-suid uses]
 
 import requests
 import re
@@ -14,7 +14,7 @@ bins = []
 gtfoBase = 'https://gtfobins.github.io/gtfobins/'
 h2reg = r"<h2 id=.*"
 fileArg = ''
-usage = 'Usage: python3 gtfo-enum.py --file <filename> [-a to show uses beyond SUID]'
+usage = 'Usage: python3 gtfo-enum.py --file <filename> [--all to show uses beyond SUID]'
 allExploits = False
 suid = 'SUID'
 limSuid = 'Limited SUID'
